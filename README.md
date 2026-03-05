@@ -15,6 +15,8 @@ Implementando un Mapa (HashMap)
 
 2. El laboratorio **debe desarrollarse íntegramente en su cuenta personal de Replit**, **con el autocompletado basado en IA desactivado**.
 
+   Vea [**AQUI**](https://chartreuse-goal-d5c.notion.site/Como-desactivar-llenado-autom-tico-de-repl-it-31ad965dc59e80b7b05bd02ae7970fdb?source=copy_link) como desactivar el autocompletado.
+
 3. Solo está permitido modificar los archivos `hashmap.c` y `main.c` y no está permitido utilizar comandos Git.
 
 4. **No está permitido copiar bloques de código de fuentes externas**.

@@ -67,7 +67,7 @@ HashMap * createMap(long capacity)
 
 void insertMap(HashMap * map, char * key, void * value) 
 {
-    int pos = hash(key);
+    int pos = hash(key,map->capacity);
     while(map->buckets[pos] != NULL)
     {
         if(map->buckets[pos]->key == NULL)

@@ -8,3 +8,9 @@ hashmap.c:53:19: error: assignment to ‘Pair **’ from incompatible pointer ty
    53 |     mapa->buckets = (Pair*) malloc(capacity * (sizeof(Pair)));
       |                   ^
 97fbcd0
+Tue Apr 14 10:57:24 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|7
+total_score: 0/60
+0638d68

@@ -119,7 +119,7 @@ Pair * searchMap(HashMap * map,  char * key)
 
 void eraseMap(HashMap * map,  char * key) 
 {    
-    long pos = hash(pos,map->capacity);
+    long pos = hash(key,map->capacity);
     while(map->buckets[pos] != NULL)
         {
             if(strcmp(map->buckets[pos]->key,key) == 0)

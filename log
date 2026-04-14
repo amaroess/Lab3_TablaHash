@@ -122,3 +122,18 @@ Tue Apr 14 11:25:06 PM UTC 2026:
  tests:  8|3
 total_score: 30/60
 5bed3d9
+Tue Apr 14 11:31:41 PM UTC 2026: 
+ hashmap.c | 17 ++++++++++++++---
+ 1 file changed, 14 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:122:21: error: passing argument 1 of ‘hash’ makes pointer from integer without a cast [-Wint-conversion]
+  122 |     long pos = hash(pos,map->capacity);
+      |                     ^~~
+      |                     |
+      |                     long int
+hashmap.c:28:19: note: expected ‘char *’ but argument is of type ‘long int’
+   28 | long hash( char * key, long capacity) {
+      |            ~~~~~~~^~~
+c5906e8

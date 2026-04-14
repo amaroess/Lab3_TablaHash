@@ -62,3 +62,14 @@ hashmap.c:87:17: error: ‘map->buckets’ is a pointer to pointer; did you mean
       |                 ^~
       |     (*          )
 edd2aa1
+Tue Apr 14 11:10:54 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:87:17: error: ‘map->buckets’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   87 |     map->buckets->value = value;
+      |                 ^~
+      |     (*          )
+756aff0

@@ -44,8 +44,15 @@ int is_equal(void* key1, void* key2){
 // Esta función crea una variable de tipo HashMap, inicializa el arreglo de buckets con casillas nulas, inicializa el resto de variables y retorna el mapa. 
 // Inicialice el índice current a -1.
 
-HashMap * createMap(long capacity) {
-
+HashMap * createMap(long capacity) 
+{
+    HashMap* mapa = (HashMap*) malloc(sizeof(HashMap));
+    mapa->capacity = capacity;
+    mapa->size = 0;
+    mapa->current = -1;
+    mapa->buckets = (Pair*) malloc(capacity * (sizeof(Pair)));
+    for(int i = 0; i < capacity; i++)
+        mapa->buckets[i] = NULL;
     return NULL;
 }
 

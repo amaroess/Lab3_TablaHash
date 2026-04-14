@@ -143,3 +143,17 @@ Tue Apr 14 11:32:06 PM UTC 2026:
  tests:  11|2
 total_score: 40/60
 16d9b5f
+Tue Apr 14 11:37:39 PM UTC 2026: 
+ hashmap.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:148:17: error: expected ‘,’ or ‘;’ before ‘return’
+  148 |                 return par;
+      |                 ^~~~~~
+hashmap.c:147:23: error: unused variable ‘par’ [-Werror=unused-variable]
+  147 |                 Pair* par = map->buckets[i]
+      |                       ^~~
+cc1: all warnings being treated as errors
+7b75868

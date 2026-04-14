@@ -20,3 +20,27 @@ Tue Apr 14 10:57:48 PM UTC 2026:
  tests:  1|6
 total_score: 5/60
 3f0f401
+Tue Apr 14 11:10:09 PM UTC 2026: 
+ hashmap.c | 22 ++++++++++++++++++++--
+ 1 file changed, 20 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:70:15: error: too few arguments to function ‘hash’
+   70 |     int pos = hash(key);
+      |               ^~~~
+hashmap.c:28:6: note: declared here
+   28 | long hash( char * key, long capacity) {
+      |      ^~~~
+hashmap.c:78:9: error: expected expression before ‘}’ token
+   78 |         }
+      |         ^
+hashmap.c:78:9: error: ‘return’ with a value, in function returning void [-Wreturn-mismatch]
+hashmap.c:68:6: note: declared here
+   68 | void insertMap(HashMap * map, char * key, void * value)
+      |      ^~~~~~~~~
+hashmap.c:87:17: error: ‘map->buckets’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   87 |     map->buckets->value = value;
+      |                 ^~
+      |     (*          )
+0773742

@@ -76,13 +76,14 @@ void insertMap(HashMap * map, char * key, void * value)
             map->buckets[pos]->value = value;
             return;
         }
-        else if(map->buckets[pos]->key == key)
+        else if(strcmp(map->buckets[pos]->key , key) == 0)
         {
             map->buckets[pos]->value = value;
             return;
         }
         pos = (pos + 1) % map->capacity;
     }
+    map->buckets[pos] = malloc(sizeof(Pair));
     map->buckets[pos]->key = key;
     map->buckets[pos]->value = value;
 }

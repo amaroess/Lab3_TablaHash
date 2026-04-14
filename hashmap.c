@@ -144,7 +144,7 @@ Pair * firstMap(HashMap * map)
         {
             if(map->buckets[i] != NULL)
             {
-                Pair* par = map->buckets[i]
+                Pair* par = map->buckets[i];
                 return par;
             }
 

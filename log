@@ -96,3 +96,17 @@ Tue Apr 14 11:20:47 PM UTC 2026:
  tests:  6|4
 total_score: 20/60
 b546801
+Tue Apr 14 11:21:21 PM UTC 2026: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:104:13: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  104 |             if(strcmp(map->buckets[pos]->key,key) == 0)
+      |             ^~
+hashmap.c:106:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  106 |                 return map->buckets[pos];
+      |                 ^~~~~~
+cc1: all warnings being treated as errors
+08d0b96

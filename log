@@ -445,3 +445,18 @@ Wed Apr 15 06:03:48 PM UTC 2026:
  1 file changed, 2 insertions(+)
  tests:  0|0
 3c22932
+Wed Apr 15 06:08:39 PM UTC 2026: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:147:17: error: expected ‘(’ before ‘Pair’
+  147 |                 Pair* par = map->buckets[i];
+      |                 ^~~~
+      |                 (
+hashmap.c:149:38: error: ‘par’ undeclared (first use in this function)
+  149 |                 printf("\n%s, %s\n", par->key, (char*)(par->value));
+      |                                      ^~~
+hashmap.c:149:38: note: each undeclared identifier is reported only once for each function it appears in
+594ef4c

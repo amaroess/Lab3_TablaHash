@@ -195,7 +195,7 @@ void enlarge(HashMap * map)
         {
             if(buckets_old[i] != NULL)
             {
-                insertMap(map,buckets_old->key,buckets_old->value);
+                insertMap(map,buckets_old[i]->key,buckets_old[i]->value);
                 free(buckets_old[i]);
             }
         }

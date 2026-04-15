@@ -332,3 +332,16 @@ hashmap.c:198:59: error: ‘buckets_old’ is a pointer to pointer; did you mean
       |                                                           ^~
       |                                                (*         )
 bac2397
+Wed Apr 15 04:09:42 AM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:198:42: error: request for member ‘key’ in something not a structure or union
+  198 |                 insertMap(map,buckets_old.key,buckets_old.value);
+      |                                          ^
+hashmap.c:198:58: error: request for member ‘value’ in something not a structure or union
+  198 |                 insertMap(map,buckets_old.key,buckets_old.value);
+      |                                                          ^
+d7fa9ea

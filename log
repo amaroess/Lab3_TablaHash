@@ -262,3 +262,22 @@ hashmap.c:195:59: error: ‘buckets_old’ is a pointer to pointer; did you mean
       |                                                           ^~
       |                                                (*         )
 67332e1
+Wed Apr 15 04:08:01 AM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:188:38: error: expected ‘;’ before ‘)’ token
+  188 |     for(long i = 0; i < map->capacity)
+      |                                      ^
+      |                                      ;
+hashmap.c:195:42: error: ‘buckets_old’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  195 |                 insertMap(map,buckets_old->key,buckets_old->value);
+      |                                          ^~
+      |                               (*         )
+hashmap.c:195:59: error: ‘buckets_old’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  195 |                 insertMap(map,buckets_old->key,buckets_old->value);
+      |                                                           ^~
+      |                                                (*         )
+6802700

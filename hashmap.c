@@ -184,7 +184,7 @@ void enlarge(HashMap * map)
     Pair** buckets_old = map->buckets;
     long old_cap = map->capacity;
     map->capacity *= 2;
-    map->buckets = (Pair**) malloc(map->capacity * sizeof(Pair*))
+    map->buckets = (Pair**) malloc(map->capacity * sizeof(Pair*));
     for(long i = 0; i < map->capacity)
         map->buckets[i] = NULL;
     map->size = 0;

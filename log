@@ -198,3 +198,14 @@ Tue Apr 14 11:58:33 PM UTC 2026:
  tests:  12|2
 total_score: 40/60
 120470d
+Wed Apr 15 12:04:03 AM UTC 2026: 
+ hashmap.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:157:45: error: expected ‘)’ before ‘;’ token
+  157 |     for(long i = pos; i < map->capacity; i++;)
+      |        ~                                    ^
+      |                                             )
+584ad20

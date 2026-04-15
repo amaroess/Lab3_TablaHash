@@ -145,7 +145,7 @@ Pair * firstMap(HashMap * map)
             {
                 Pair* par = map->buckets[i];
                 map->current = i;
-                printf("\n%s, %s\n", par->key, par->value);
+                printf("\n%s, %s\n", par->key, (char*)(par->value));
                 return par;
             }
         }

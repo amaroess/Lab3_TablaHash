@@ -142,8 +142,7 @@ Pair * firstMap(HashMap * map)
     for(long i = 0; i < (map->capacity); i++)   
         {
             if(map->buckets[i] != NULL)
-            {
-                if 
+            { 
                 Pair* par = map->buckets[i];
                 map->current = i;
                 printf("\n%s, %s\n", par->key, (char*)(par->value));

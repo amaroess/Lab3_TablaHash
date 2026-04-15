@@ -416,3 +416,17 @@ Wed Apr 15 05:48:02 PM UTC 2026:
  tests:  13|1
 total_score: 50/60
 cc513ed
+Wed Apr 15 05:49:11 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:148:32: error: format ‘%s’ expects argument of type ‘char *’, but argument 3 has type ‘void *’ [-Werror=format=]
+  148 |                 printf("\n%s, %s\n", par->key, par->value);
+      |                               ~^               ~~~~~~~~~~
+      |                                |                  |
+      |                                char *             void *
+      |                               %p
+cc1: all warnings being treated as errors
+6495b2f

@@ -147,6 +147,7 @@ Pair * firstMap(HashMap * map)
                 map->current = i;
                 printf("\n%s, %s\n", par->key, (char*)(par->value));
                 return par;
+                
             }
         }
     return NULL;    

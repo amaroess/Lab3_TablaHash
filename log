@@ -241,3 +241,24 @@ Wed Apr 15 03:57:55 AM UTC 2026:
  tests:  12|2
 total_score: 40/60
 cdf49c7
+Wed Apr 15 04:07:21 AM UTC 2026: 
+ hashmap.c | 22 +++++++++++++++++++---
+ 1 file changed, 19 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:187:66: error: expected ‘;’ before ‘for’
+  187 |     map->buckets = (Pair**) malloc(map->capacity * sizeof(Pair*))
+      |                                                                  ^
+      |                                                                  ;
+  188 |     for(long i = 0; i < map->capacity)
+      |     ~~~                                                           
+hashmap.c:195:42: error: ‘buckets_old’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  195 |                 insertMap(map,buckets_old->key,buckets_old->value);
+      |                                          ^~
+      |                               (*         )
+hashmap.c:195:59: error: ‘buckets_old’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+  195 |                 insertMap(map,buckets_old->key,buckets_old->value);
+      |                                                           ^~
+      |                                                (*         )
+67332e1

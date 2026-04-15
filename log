@@ -396,3 +396,17 @@ Wed Apr 15 05:45:04 PM UTC 2026:
  tests:  13|1
 total_score: 50/60
 577b792
+Wed Apr 15 05:47:43 PM UTC 2026: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:148:28: error: format ‘%d’ expects argument of type ‘int’, but argument 2 has type ‘char *’ [-Werror=format=]
+  148 |                 printf("\n%d\n", par->key);
+      |                           ~^     ~~~~~~~~
+      |                            |        |
+      |                            int      char *
+      |                           %s
+cc1: all warnings being treated as errors
+b2a9512

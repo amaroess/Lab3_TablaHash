@@ -477,3 +477,9 @@ hashmap.c:146:20: error: ‘llave’ undeclared (first use in this function)
       |                    ^~~~~
 hashmap.c:146:20: note: each undeclared identifier is reported only once for each function it appears in
 10b7004
+Thu Apr 16 01:03:35 AM UTC 2026: 
+ hashmap.c | 1 -
+ 1 file changed, 1 deletion(-)
+ tests:  13|1
+total_score: 50/60
+0eecaeb

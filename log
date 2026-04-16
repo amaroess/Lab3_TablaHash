@@ -466,3 +466,14 @@ Wed Apr 15 06:08:51 PM UTC 2026:
  tests:  13|1
 total_score: 50/60
 b66662a
+Thu Apr 16 01:03:20 AM UTC 2026: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:146:20: error: ‘llave’ undeclared (first use in this function)
+  146 |                 if(llave == NULL) continue;
+      |                    ^~~~~
+hashmap.c:146:20: note: each undeclared identifier is reported only once for each function it appears in
+10b7004

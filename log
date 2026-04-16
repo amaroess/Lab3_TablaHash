@@ -498,3 +498,14 @@ Thu Apr 16 01:15:01 AM UTC 2026:
  tests:  13|1
 total_score: 50/60
 c8c0d10
+Thu Apr 16 01:19:55 AM UTC 2026: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:142:11: error: unused variable ‘aux’ [-Werror=unused-variable]
+  142 |     char* aux = NULL;
+      |           ^~~
+cc1: all warnings being treated as errors
+314c3c9

@@ -586,3 +586,21 @@ hashmap.c:124:10: error: unused variable ‘i’ [-Werror=unused-variable]
       |          ^
 cc1: all warnings being treated as errors
 d049df0
+Fri Apr 17 06:48:37 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:127:23: error: format ‘%ld’ expects argument of type ‘long int’, but argument 2 has type ‘char *’ [-Werror=format=]
+  127 |             printf("%ld\n", key);
+      |                     ~~^     ~~~
+      |                       |     |
+      |                       |     char *
+      |                       long int
+      |                     %s
+hashmap.c:124:10: error: unused variable ‘i’ [-Werror=unused-variable]
+  124 |     long i = (pos + 1) % map->capacity; // variable para recorrer hasta llegar al punto de partida
+      |          ^
+cc1: all warnings being treated as errors
+2638021

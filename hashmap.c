@@ -100,7 +100,7 @@ void insertMap(HashMap * map, char * key, void * value)
 
 Pair * searchMap(HashMap * map,  char * key) 
 {   
-    if(map == NULL || key == NULL) return;
+    if(map == NULL || key == NULL) return NULL;
     long pos = hash(key,map->capacity); // posicion hash
     while(map->buckets[pos] != NULL) // mientras haya elementos en el par
         {
@@ -145,7 +145,7 @@ void eraseMap(HashMap * map,  char * key)
 
 Pair * firstMap(HashMap * map) 
 {
-    if(map == NULL) return;
+    if(map == NULL) return NULL;
     for(long i = 0; i < (map->capacity); i++)   
         {
             if(map->buckets[i] != NULL && map->buckets[i]->key != NULL)
@@ -161,7 +161,7 @@ Pair * firstMap(HashMap * map)
 
 Pair * nextMap(HashMap * map)
 {
-    if(map == NULL) return;
+    if(map == NULL) return NULL;
     long pos = map->current; // posicion en el current
     long i = (pos + 1) % map->capacity; // parte en la siguiente posición y evita salirse del mapa 
     while(i != pos) // recorre el mapa hasta volver al inicio

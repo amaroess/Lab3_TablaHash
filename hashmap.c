@@ -121,7 +121,7 @@ Pair * searchMap(HashMap * map,  char * key)
 void eraseMap(HashMap * map,  char * key) 
 {    
     long pos = hash(key,map->capacity); // posicion hash original
-    long i = (pos + 1) % map->capacity; // variable para recorrer hasta llegar al punto de partida
+    //long i = (pos + 1) % map->capacity; // variable para recorrer hasta llegar al punto de partida
     while(map->buckets[pos] != NULL) // mientras haya elementos
         {
             printf("%s\n", map->buckets[pos]->key);

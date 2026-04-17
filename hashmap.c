@@ -83,11 +83,7 @@ void insertMap(HashMap * map, char * key, void * value)
         }
         pos = (pos + 1) % map->capacity; // resolucion para no salirse del mapa
     }
-    // si se encontró un espacio vacío 
-    map->buckets[pos] = malloc(sizeof(Pair)); // se le reserva memoria 
-    map->buckets[pos]->key = key; // se le asigna la llave
-    map->buckets[pos]->value = value; // se le asigna el valor
-    (map->size)++; // se aumenta la cantidad de elementos en el mapa
+
 }
 
 // 3. Implemente la función Pair * searchMap(HashMap * map, char * key), la cual retorna el Pair asociado a la clave ingresada. 

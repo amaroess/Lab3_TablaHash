@@ -124,7 +124,7 @@ void eraseMap(HashMap * map,  char * key)
     long i = (pos + 1) % map->capacity; // variable para recorrer hasta llegar al punto de partida
     while(map->buckets[i] != NULL) // mientras haya elementos
         {
-            if(strcmp(map->buckets[pos]->key,key) == 0) // si tienen misma llave
+            if(strcmp(map->buckets[i]->key,key) == 0) // si tienen misma llave
             {
                 map->buckets[pos]->key = NULL; // se deja llave en NULL
                 (map->size)--; // se disminuye cantidad de elementos en el mapa

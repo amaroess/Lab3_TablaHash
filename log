@@ -557,3 +557,14 @@ Fri Apr 17 06:44:55 PM UTC 2026:
  tests:  13|2
 total_score: 40/60
 b209695
+Fri Apr 17 06:47:31 PM UTC 2026: 
+ hashmap.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:124:10: error: unused variable ‘i’ [-Werror=unused-variable]
+  124 |     long i = (pos + 1) % map->capacity; // variable para recorrer hasta llegar al punto de partida
+      |          ^
+cc1: all warnings being treated as errors
+911a125

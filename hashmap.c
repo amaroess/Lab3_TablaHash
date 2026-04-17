@@ -122,16 +122,16 @@ void eraseMap(HashMap * map,  char * key)
 {    
     long pos = hash(key,map->capacity); // posicion hash original
     long i = (pos + 1) % map->capacity; // variable para recorrer hasta llegar al punto de partida
-    while(map->buckets[i] != NULL) // mientras haya elementos
+    while(map->buckets[pos] != NULL) // mientras haya elementos
         {
-            if(strcmp(map->buckets[i]->key,key) == 0) // si tienen misma llave
+            if(strcmp(map->buckets[pos]->key,key) == 0) // si tienen misma llave
             {
                 map->buckets[pos]->key = NULL; // se deja llave en NULL
                 (map->size)--; // se disminuye cantidad de elementos en el mapa
                 return;
             }
-            if(i == pos) return;
-            i = (i + 1) % map->capacity; // resolucion lineal
+            
+            pos = (pos + 1) % map->capacity; // resolucion lineal
         }
     return;
 }

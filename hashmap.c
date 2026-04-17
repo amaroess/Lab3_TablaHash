@@ -142,7 +142,7 @@ Pair * firstMap(HashMap * map)
 {
     for(long i = 0; i < (map->capacity); i++)   
         {
-            if(map->buckets[i] != NULL)
+            if(map->buckets[i] != NULL && map->buckets[i]->key != NULL)
             { 
                 Pair* par = map->buckets[i];
                 map->current = i;

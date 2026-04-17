@@ -67,6 +67,7 @@ HashMap * createMap(long capacity)
 
 void insertMap(HashMap * map, char * key, void * value) 
 {
+    if(map == NULL || key == NULL) return;
     long pos = hash(key,map->capacity); // posicion hash
     while(map->buckets[pos] != NULL) // mientras par tenga elementos
     {
@@ -99,6 +100,7 @@ void insertMap(HashMap * map, char * key, void * value)
 
 Pair * searchMap(HashMap * map,  char * key) 
 {   
+    if(map == NULL || key == NULL) return;
     long pos = hash(key,map->capacity); // posicion hash
     while(map->buckets[pos] != NULL) // mientras haya elementos en el par
         {
@@ -120,6 +122,7 @@ Pair * searchMap(HashMap * map,  char * key)
 
 void eraseMap(HashMap * map,  char * key) 
 {    
+    if(map == NULL || key == NULL) return;
     long pos = hash(key,map->capacity); // posicion hash original
     while(map->buckets[pos] != NULL) // mientras haya elementos
         {
@@ -142,6 +145,7 @@ void eraseMap(HashMap * map,  char * key)
 
 Pair * firstMap(HashMap * map) 
 {
+    if(map == NULL) return;
     for(long i = 0; i < (map->capacity); i++)   
         {
             if(map->buckets[i] != NULL && map->buckets[i]->key != NULL)
@@ -157,6 +161,7 @@ Pair * firstMap(HashMap * map)
 
 Pair * nextMap(HashMap * map)
 {
+    if(map == NULL) return;
     long pos = map->current; // posicion en el current
     long i = (pos + 1) % map->capacity; // parte en la siguiente posición y evita salirse del mapa 
     while(i != pos) // recorre el mapa hasta volver al inicio
@@ -185,6 +190,7 @@ Pair * nextMap(HashMap * map)
 
 void enlarge(HashMap * map) 
 {
+    if(map == NULL) return;
     Pair** buckets_old = map->buckets; // se guarda los pares antiguos
     long old_cap = map->capacity; // se guarda capacidad antigua
     map->capacity *= 2; // se multiplica por 2 la capacidad

@@ -691,3 +691,30 @@ Fri Apr 17 06:54:38 PM UTC 2026:
  tests:  16|1
 total_score: 50/60
 edaf081
+Fri Apr 17 07:04:21 PM UTC 2026: 
+ hashmap.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:103:36: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+  103 |     if(map == NULL || key == NULL) return;
+      |                                    ^~~~~~
+hashmap.c:101:8: note: declared here
+  101 | Pair * searchMap(HashMap * map,  char * key)
+      |        ^~~~~~~~~
+hashmap.c: In function ‘firstMap’:
+hashmap.c:148:21: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+  148 |     if(map == NULL) return;
+      |                     ^~~~~~
+hashmap.c:146:8: note: declared here
+  146 | Pair * firstMap(HashMap * map)
+      |        ^~~~~~~~
+hashmap.c: In function ‘nextMap’:
+hashmap.c:164:21: error: ‘return’ with no value, in function returning non-void [-Wreturn-mismatch]
+  164 |     if(map == NULL) return;
+      |                     ^~~~~~
+hashmap.c:162:8: note: declared here
+  162 | Pair * nextMap(HashMap * map)
+      |        ^~~~~~~
+87ff601

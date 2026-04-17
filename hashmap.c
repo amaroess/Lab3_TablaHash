@@ -186,22 +186,22 @@ void enlarge(HashMap * map)
     Pair** buckets_old = map->buckets; // se guarda los pares antiguos
     long old_cap = map->capacity; // se guarda capacidad antigua
     map->capacity *= 2; // se multiplica por 2 la capacidad
-    map->buckets = (Pair**) malloc(map->capacity * sizeof(Pair*));
+    map->buckets = (Pair**) malloc(map->capacity * sizeof(Pair*)); // se reserva memoria nueva para la nueva capacidad
     for(long i = 0; i < map->capacity; i++)
         {
-            map->buckets[i] = NULL;
+            map->buckets[i] = NULL; // se inicializa en null
         }
        
-    map->size = 0;
-    for(long i = 0; i < old_cap; i++)
+    map->size = 0; // no hay elementos
+    for(long i = 0; i < old_cap; i++) // for para ingresar nuevamente los elementos
         {
-            if(buckets_old[i] != NULL)
+            if(buckets_old[i] != NULL) // si hay elemento en el par antiguo
             {
-                insertMap(map,buckets_old[i]->key,buckets_old[i]->value);
-                free(buckets_old[i]);
+                insertMap(map,buckets_old[i]->key,buckets_old[i]->value); // funcion para insertar
+                free(buckets_old[i]); // se libera la posicion antigua
             }
         }
-    free(buckets_old);
+    free(buckets_old); // se liberan todos los pares
         
     enlarge_called = 1; //no borrar (testing purposes)
 }

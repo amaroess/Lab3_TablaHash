@@ -121,19 +121,17 @@ Pair * searchMap(HashMap * map,  char * key)
 void eraseMap(HashMap * map,  char * key) 
 {    
     long pos = hash(key,map->capacity); // posicion hash original
-    long i = (pos + 1) % map->capacity; // variable para recorrer hasta llegar al punto de partida
     while(map->buckets[pos] != NULL) // mientras haya elementos
         {
-            printf("%s\n", map->buckets[i]->key);
-            if(strcmp(map->buckets[i]->key,key) == 0) // si tienen misma llave
+            printf("%s\n", map->buckets[pos]->key);
+            if(strcmp(map->buckets[ipos]->key,key) == 0) // si tienen misma llave
             {
-                map->buckets[i]->key = NULL; // se deja llave en NULL
+                map->buckets[ipos]->key = NULL; // se deja llave en NULL
                 (map->size)--; // se disminuye cantidad de elementos en el mapa
                 return;
             }
             
-            i = (i + 1) % map->capacity; // resolucion lineal
-            pos = (i + 1) % map->capacity;
+            ipos = (pos + 1) % map->capacity; // resolucion lineal
         }
     return;
 }

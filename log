@@ -661,3 +661,15 @@ Fri Apr 17 06:52:44 PM UTC 2026:
  1 file changed, 2 insertions(+), 1 deletion(-)
  tests:  0|0
 2fd8383
+Fri Apr 17 06:54:11 PM UTC 2026: 
+ hashmap.c | 10 ++++------
+ 1 file changed, 4 insertions(+), 6 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:127:36: error: ‘ipos’ undeclared (first use in this function); did you mean ‘pos’?
+  127 |             if(strcmp(map->buckets[ipos]->key,key) == 0) // si tienen misma llave
+      |                                    ^~~~
+      |                                    pos
+hashmap.c:127:36: note: each undeclared identifier is reported only once for each function it appears in
+f5991f6

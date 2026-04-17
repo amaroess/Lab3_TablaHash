@@ -685,3 +685,9 @@ hashmap.c:129:30: error: ‘ipos’ undeclared (first use in this function); did
       |                              pos
 hashmap.c:129:30: note: each undeclared identifier is reported only once for each function it appears in
 6747b6d
+Fri Apr 17 06:54:38 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  16|1
+total_score: 50/60
+edaf081

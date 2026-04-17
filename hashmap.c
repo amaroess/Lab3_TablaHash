@@ -126,12 +126,12 @@ void eraseMap(HashMap * map,  char * key)
             printf("%s\n", map->buckets[pos]->key);
             if(strcmp(map->buckets[pos]->key,key) == 0) // si tienen misma llave
             {
-                map->buckets[ipos]->key = NULL; // se deja llave en NULL
+                map->buckets[pos]->key = NULL; // se deja llave en NULL
                 (map->size)--; // se disminuye cantidad de elementos en el mapa
                 return;
             }
             
-            ipos = (pos + 1) % map->capacity; // resolucion lineal
+            pos = (pos + 1) % map->capacity; // resolucion lineal
         }
     return;
 }

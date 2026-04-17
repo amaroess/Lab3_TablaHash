@@ -621,3 +621,14 @@ hashmap.c:124:10: error: unused variable ‘i’ [-Werror=unused-variable]
       |          ^
 cc1: all warnings being treated as errors
 c5f86aa
+Fri Apr 17 06:49:28 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:124:10: error: unused variable ‘i’ [-Werror=unused-variable]
+  124 |     long i = (pos + 1) % map->capacity; // variable para recorrer hasta llegar al punto de partida
+      |          ^
+cc1: all warnings being treated as errors
+fa44e38

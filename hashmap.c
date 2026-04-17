@@ -83,7 +83,11 @@ void insertMap(HashMap * map, char * key, void * value)
         }
         pos = (pos + 1) % map->capacity; // resolucion para no salirse del mapa
     }
-
+    // si se encontró un espacio vacío 
+    map->buckets[pos] = malloc(sizeof(Pair)); // se le reserva memoria 
+    map->buckets[pos]->key = key; // se le asigna la llave
+    map->buckets[pos]->value = value; // se le asigna el valor
+    (map->size)++; // se aumenta la cantidad de elementos en el mapa
 }
 
 // 3. Implemente la función Pair * searchMap(HashMap * map, char * key), la cual retorna el Pair asociado a la clave ingresada. 
@@ -95,15 +99,15 @@ void insertMap(HashMap * map, char * key, void * value)
 
 Pair * searchMap(HashMap * map,  char * key) 
 {   
-    long pos = hash(key,map->capacity);
-    while(map->buckets[pos] != NULL)
+    long pos = hash(key,map->capacity); // posicion hash
+    while(map->buckets[pos] != NULL) // mientras haya elementos en el par
         {
-            if(strcmp(map->buckets[pos]->key,key) == 0)
+            if(strcmp(map->buckets[pos]->key,key) == 0) // si tienen la misma llave
             {
-                map->current = pos;
-                return map->buckets[pos];
+                map->current = pos; // se actualiza current como se pide
+                return map->buckets[pos]; // retorna el par
             }
-            pos = (pos + 1) % map->capacity;
+            pos = (pos + 1) % map->capacity; // resolucion lineal
         }
     return NULL;
 }
@@ -116,16 +120,16 @@ Pair * searchMap(HashMap * map,  char * key)
 
 void eraseMap(HashMap * map,  char * key) 
 {    
-    long pos = hash(key,map->capacity);
-    while(map->buckets[pos] != NULL)
+    long pos = hash(key,map->capacity); // posicion hash
+    while(map->buckets[pos] != NULL) // mientras haya elementos
         {
-            if(strcmp(map->buckets[pos]->key,key) == 0)
+            if(strcmp(map->buckets[pos]->key,key) == 0) // si tienen misma llave
             {
-                map->buckets[pos]->key = NULL;
-                (map->size)--;
+                map->buckets[pos]->key = NULL; // se deja llave en NULL
+                (map->size)--; // se disminuye cantidad de elementos en el mapa
                 return;
             }
-            pos = (pos + 1) % map->capacity;
+            pos = (pos + 1) % map->capacity; // resolucion lineal
         }
     return;
 }
@@ -151,16 +155,16 @@ Pair * firstMap(HashMap * map)
 
 Pair * nextMap(HashMap * map)
 {
-    long pos = map->current;
-    long i = (pos + 1) % map->capacity;
-    while(i != pos)
+    long pos = map->current; // posicion en el current
+    long i = (pos + 1) % map->capacity; // parte en la siguiente posición y evita salirse del mapa 
+    while(i != pos) // recorre el mapa hasta volver al inicio
         {
-            if(map->buckets[i] != NULL && map->buckets[i]->key != NULL)
+            if(map->buckets[i] != NULL && map->buckets[i]->key != NULL) // si hay par y la llave no es NULL
             {
-                map->current = i;
-                return map->buckets[i];
+                map->current = i; // se actualiza current a la nueva posición
+                return map->buckets[i]; // retorna el par
             }
-            i = (i + 10) % map->capacity;
+            i = (i + 1) % map->capacity; // se sigue con resolución lineal
         }
     return NULL;
 }

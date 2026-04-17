@@ -638,3 +638,15 @@ Fri Apr 17 06:49:38 PM UTC 2026:
  tests:  16|1
 total_score: 50/60
 6e44529
+Fri Apr 17 06:51:35 PM UTC 2026: 
+ hashmap.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:125:24: error: ‘pios’ undeclared (first use in this function); did you mean ‘pos’?
+  125 |     while(map->buckets[pios] != NULL) // mientras haya elementos
+      |                        ^~~~
+      |                        pos
+hashmap.c:125:24: note: each undeclared identifier is reported only once for each function it appears in
+1266109

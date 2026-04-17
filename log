@@ -673,3 +673,15 @@ hashmap.c:127:36: error: ‘ipos’ undeclared (first use in this function); did
       |                                    pos
 hashmap.c:127:36: note: each undeclared identifier is reported only once for each function it appears in
 f5991f6
+Fri Apr 17 06:54:23 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:129:30: error: ‘ipos’ undeclared (first use in this function); did you mean ‘pos’?
+  129 |                 map->buckets[ipos]->key = NULL; // se deja llave en NULL
+      |                              ^~~~
+      |                              pos
+hashmap.c:129:30: note: each undeclared identifier is reported only once for each function it appears in
+6747b6d

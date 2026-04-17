@@ -19,7 +19,7 @@ struct HashMap {
 };
 
 Pair * createPair( char * key,  void * value) {
-    Pair * new = (Pair *)malloc(sizeof(Pair));
+    Pair * new = (Pair *)malloc(sizeof(Pair)); 
     new->key = key;
     new->value = value;
     return new;
@@ -46,14 +46,14 @@ int is_equal(void* key1, void* key2){
 
 HashMap * createMap(long capacity) 
 {
-    HashMap* mapa = (HashMap*) malloc(sizeof(HashMap));
-    mapa->capacity = capacity;
-    mapa->size = 0;
-    mapa->current = -1;
-    mapa->buckets = (Pair**) malloc(capacity * (sizeof(Pair)));
+    HashMap* mapa = (HashMap*) malloc(sizeof(HashMap)); // se reserva memoria para el mapa
+    mapa->capacity = capacity; // se le asigna la capacidad recibida
+    mapa->size = 0; // no hay elementos (mapa vacio)
+    mapa->current = -1; // current en -1 como se pide
+    mapa->buckets = (Pair**) malloc(capacity * (sizeof(Pair))); // se reserva memoria para cada par
     for(int i = 0; i < capacity; i++)
-        mapa->buckets[i] = NULL;
-    return mapa;
+        mapa->buckets[i] = NULL; // se inicializa cada par en NULL (no es necesario si se reserva memoria con calloc)
+    return mapa; // se retorna mapa
 }
 
 // 2. Implemente la función void insertMap(HashMap * map, char * key, void * value). 
@@ -67,26 +67,27 @@ HashMap * createMap(long capacity)
 
 void insertMap(HashMap * map, char * key, void * value) 
 {
-    long pos = hash(key,map->capacity);
-    while(map->buckets[pos] != NULL)
+    long pos = hash(key,map->capacity); // posicion hash
+    while(map->buckets[pos] != NULL) // mientras par tenga elementos
     {
-        if(map->buckets[pos]->key == NULL)
+        if(map->buckets[pos]->key == NULL) // si la llave del par es NULL
         {
-            map->buckets[pos]->key = key;
-            map->buckets[pos]->value = value;
+            map->buckets[pos]->key = key; // se le asigna 
+            map->buckets[pos]->value = value; // se le asigna el valor
             return;
         }
-        else if(strcmp(map->buckets[pos]->key , key) == 0)
+        else if(strcmp(map->buckets[pos]->key , key) == 0) // si la llave buscada es la misma que la del par
         {
-            map->buckets[pos]->value = value;
-            return;
+            map->buckets[pos]->value = value; // se le reemplaza el valor
+            return; 
         }
-        pos = (pos + 1) % map->capacity;
+        pos = (pos + 1) % map->capacity; // resolucion para no salirse del mapa
     }
-    map->buckets[pos] = malloc(sizeof(Pair));
-    map->buckets[pos]->key = key;
-    map->buckets[pos]->value = value;
-    (map->size)++;
+    // si se encontró un espacio vacío 
+    map->buckets[pos] = malloc(sizeof(Pair)); // se le reserva memoria 
+    map->buckets[pos]->key = key; // se le asigna la llave
+    map->buckets[pos]->value = value; // se le asigna el valor
+    (map->size)++; // se aumenta la cantidad de elementos en el mapa
 }
 
 // 3. Implemente la función Pair * searchMap(HashMap * map, char * key), la cual retorna el Pair asociado a la clave ingresada. 
@@ -139,7 +140,6 @@ void eraseMap(HashMap * map,  char * key)
 
 Pair * firstMap(HashMap * map) 
 {
-    char* aux = NULL;
     for(long i = 0; i < (map->capacity); i++)   
         {
             if(map->buckets[i] != NULL)

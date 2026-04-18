@@ -170,6 +170,7 @@ Pair * nextMap(HashMap * map)
             {
                 map->current = i; // se actualiza current a la nueva posición
                 printf("%s\n", (char*)(map->buckets[i]->key));
+                printf("%ld -- %ld \n",i,pos);
                 return map->buckets[i]; // retorna el par
             }
             i = (i + 1) % map->capacity; // se sigue con resolución lineal

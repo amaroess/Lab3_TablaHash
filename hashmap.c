@@ -194,10 +194,10 @@ void enlarge(HashMap * map)
 {
     if(map == NULL) return;
     Pair** buckets_old = map->buckets; // se guarda los pares antiguos
-    Pair** buckets_new;
+    Pair** buckets_new = (Pair**) malloc(sizeof(Pair*));
     long old_cap = map->capacity; // se guarda capacidad antigua
     map->capacity *= 2; // se multiplica por 2 la capacidad
-    map->buckets = buckets_new;
+    map->buckets = buckets_new; // 
     map->size = 0; // no hay elementos
     for(long i = 0; i < old_cap; i++) // for para ingresar nuevamente los elementos
         {

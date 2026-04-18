@@ -745,3 +745,9 @@ hashmap.c:172:24: error: called object is not a function or function pointer
   172 |                 printf("%s\n" (char*)(map->buckets[i]->key));
       |                        ^~~~~~
 4238c51
+Sat Apr 18 12:32:03 AM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  16|1
+total_score: 50/60
+1c3a25d

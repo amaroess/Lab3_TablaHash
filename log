@@ -805,3 +805,17 @@ hashmap.c:200:18: error: assignment to ‘Pair **’ from incompatible pointer t
   200 |     map->buckets = buckets_new;
       |                  ^
 fab225e
+Sat Apr 18 01:09:49 AM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:200:18: error: ‘buckets_new’ may be used uninitialized [-Werror=maybe-uninitialized]
+  200 |     map->buckets = buckets_new;
+      |     ~~~~~~~~~~~~~^~~~~~~~~~~~~
+hashmap.c:197:12: note: ‘buckets_new’ was declared here
+  197 |     Pair** buckets_new;
+      |            ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+5ebc4d4

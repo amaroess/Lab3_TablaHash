@@ -194,7 +194,7 @@ void enlarge(HashMap * map)
 {
     if(map == NULL) return;
     Pair** buckets_old = map->buckets; // se guarda los pares antiguos
-    Pair* buckets_new;
+    Pair** buckets_new;
     long old_cap = map->capacity; // se guarda capacidad antigua
     map->capacity *= 2; // se multiplica por 2 la capacidad
     map->buckets = buckets_new;

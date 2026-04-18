@@ -196,8 +196,8 @@ void enlarge(HashMap * map)
     Pair** buckets_old = map->buckets; // se guarda los pares antiguos
     long old_cap = map->capacity; // se guarda capacidad antigua
     map->capacity *= 2; // se multiplica por 2 la capacidad
-    Pair** buckets_new = (Pair**) calloc(map->capacity,sizeof(Pair*));
-    map->buckets = buckets_new; // 
+    Pair** buckets_new = (Pair**) calloc(map->capacity,sizeof(Pair*)); // nueva capacidad para buckets
+    map->buckets = buckets_new; // se le asigna la capacidad nueva
     map->size = 0; // no hay elementos
     for(long i = 0; i < old_cap; i++) // for para ingresar nuevamente los elementos
         {

@@ -795,3 +795,13 @@ Sat Apr 18 01:02:02 AM UTC 2026:
  tests:  17|0
 total_score: 60/60
 0add4ae
+Sat Apr 18 01:09:40 AM UTC 2026: 
+ hashmap.c | 24 ++++++++++--------------
+ 1 file changed, 10 insertions(+), 14 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:200:18: error: assignment to ‘Pair **’ from incompatible pointer type ‘Pair *’ [-Wincompatible-pointer-types]
+  200 |     map->buckets = buckets_new;
+      |                  ^
+fab225e

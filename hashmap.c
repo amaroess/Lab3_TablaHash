@@ -145,15 +145,15 @@ void eraseMap(HashMap * map,  char * key)
 
 Pair * firstMap(HashMap * map) 
 {
-    if(map == NULL) return NULL;
+    if(map == NULL) return NULL; 
     for(long i = 0; i < (map->capacity); i++)   
         {
-            if(map->buckets[i] != NULL && map->buckets[i]->key != NULL)
+            if(map->buckets[i] != NULL && map->buckets[i]->key != NULL) // si hay elemento y llave no nula
             { 
-                Pair* par = map->buckets[i];
-                map->current = i;
-                printf("\n%s, %s\n", par->key, (char*)(par->value));
-                return par;    
+                Pair* par = map->buckets[i]; 
+                map->current = i; // se actualiza el current
+                //printf("\n%s, %s\n", par->key, (char*)(par->value));
+                return par;    // se retorna el par
             }
         }
     return NULL;    
@@ -163,14 +163,14 @@ Pair * nextMap(HashMap * map)
 {
     if(map == NULL) return NULL;
     long pos = (map->current); // posicion en el current
-    long i = (pos + 1) % map->capacity; // parte en la siguiente posición y evita salirse del mapa 
-    while(i > pos) // recorre el mapa hasta volver al inicio
+    long i = (pos + 1) % map->capacity; // parte en la siguiente posición a "pos" y evita salirse del mapa 
+    while(i > pos) // recorre el mapa hasta volver al inicio (i > pos) porque por resolución lineal "i" siempre debe ser mayor a pos a menos que se haya llegado al final y "i" sea cero, por lo que se deberia retornar NULL.
         {
             if(map->buckets[i] != NULL && map->buckets[i]->key != NULL) // si hay par y la llave no es NULL
             {
                 map->current = i; // se actualiza current a la nueva posición
-                printf("%s\n", (char*)(map->buckets[i]->key));
-                printf("%ld -- %ld \n",pos,i);
+                //printf("%s\n", (char*)(map->buckets[i]->key));
+                //printf("%ld -- %ld \n",pos,i); 
                 return map->buckets[i]; // retorna el par
             }
             i = (i + 1) % map->capacity; // se sigue con resolución lineal
@@ -194,14 +194,10 @@ void enlarge(HashMap * map)
 {
     if(map == NULL) return;
     Pair** buckets_old = map->buckets; // se guarda los pares antiguos
+    Pair* buckets_new;
     long old_cap = map->capacity; // se guarda capacidad antigua
     map->capacity *= 2; // se multiplica por 2 la capacidad
-    map->buckets = (Pair**) malloc(map->capacity * sizeof(Pair*)); // se reserva memoria nueva para la nueva capacidad
-    for(long i = 0; i < map->capacity; i++)
-        {
-            map->buckets[i] = NULL; // se inicializa en null
-        }
-       
+    map->buckets = buckets_new;
     map->size = 0; // no hay elementos
     for(long i = 0; i < old_cap; i++) // for para ingresar nuevamente los elementos
         {

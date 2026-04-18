@@ -164,7 +164,7 @@ Pair * nextMap(HashMap * map)
     if(map == NULL) return NULL;
     long pos = (map->current); // posicion en el current
     long i = (pos + 1) % map->capacity; // parte en la siguiente posición y evita salirse del mapa 
-    while(i != pos) // recorre el mapa hasta volver al inicio
+    while(i > pos) // recorre el mapa hasta volver al inicio
         {
             if(map->buckets[i] != NULL && map->buckets[i]->key != NULL) // si hay par y la llave no es NULL
             {

@@ -169,6 +169,7 @@ Pair * nextMap(HashMap * map)
             if(map->buckets[i] != NULL && map->buckets[i]->key != NULL) // si hay par y la llave no es NULL
             {
                 map->current = i; // se actualiza current a la nueva posición
+                printf("%s\n" (char*)(map->buckets[i]->key));
                 return map->buckets[i]; // retorna el par
             }
             i = (i + 1) % map->capacity; // se sigue con resolución lineal

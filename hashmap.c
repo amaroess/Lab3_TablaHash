@@ -126,7 +126,7 @@ void eraseMap(HashMap * map,  char * key)
     long pos = hash(key,map->capacity); // posicion hash original
     while(map->buckets[pos] != NULL) // mientras haya elementos
         {
-            printf("%s\n", map->buckets[pos]->key);
+            //printf("%s\n", map->buckets[pos]->key);
             if(strcmp(map->buckets[pos]->key,key) == 0) // si tienen misma llave
             {
                 map->buckets[pos]->key = NULL; // se deja llave en NULL

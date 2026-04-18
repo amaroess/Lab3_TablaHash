@@ -162,8 +162,7 @@ Pair * firstMap(HashMap * map)
 Pair * nextMap(HashMap * map)
 {
     if(map == NULL) return NULL;
-    long pos1 = (map->current); // posicion en el current
-    const long pos = pos1;
+    long pos = (map->current); // posicion en el current
     long i = (pos + 1) % map->capacity; // parte en la siguiente posición y evita salirse del mapa 
     while(i != pos) // recorre el mapa hasta volver al inicio
         {
